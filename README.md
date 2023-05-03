@@ -210,8 +210,7 @@ plt.ylabel('Número de tweets')
 text_tweets['Sentimiento'].value_counts().plot(kind='bar')
 plt.show()
 ```
-<img src="Grafica de barras.png" alt="Drawing" style="width: 900px;"/>  
-![](https://github.com/LUISVALLARTA/Proyecto_final/blob/main/doc/Grafica%20de%20barras.png?raw=true)    
+[![Grafica-de-barras.png](https://i.postimg.cc/7YNV8G3M/Grafica-de-barras.png)](https://postimg.cc/rKKW5pYK)    
 
 **Grafica de circular.**
 
@@ -225,7 +224,7 @@ tags.plot(kind='pie', autopct='%1.1f%%', shadow = True, colors=colores,
          startangle=90, wedgeprops=wp, explode=explode, label='')
 plt.title('Distribución % del sentimiento en los tweets')
 ```
-<img src="Grafica de pastel.png" alt="Drawing" style="width: 600px;"/>
+[![Grafica-de-pastel.png](https://i.postimg.cc/8zKmc2n7/Grafica-de-pastel.png)](https://postimg.cc/k2SbhpCC)
 
 **WordCloud sobre los tweets positivos**
 
@@ -238,7 +237,7 @@ plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis('off')
 plt.show()
 ```
-<img src="Palabras positivas.png" alt="Drawing" style="width: 600px;"/>
+[![Palabras-positivas.png](https://i.postimg.cc/3wzjCgh7/Palabras-positivas.png)](https://postimg.cc/mcNFT1h6)
 
 
 
@@ -252,7 +251,7 @@ plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis('off')
 plt.show()
 ```
-<img src="Palabras negativas.png" alt="Drawing" style="width: 600px;"/>
+[![Palabras-negativas.png](https://i.postimg.cc/251FZ0P2/Palabras-negativas.png)](https://postimg.cc/SXpM0fQM)
 
 **Predicción del modelo usando una regresión logística**
 
@@ -266,8 +265,7 @@ cm = confusion_matrix(y_test, mod_logreg_pred, labels=mod_logreg.classes_)
 disp = ConfusionMatrixDisplay(confusion_matrix = cm, display_labels=mod_logreg.classes_)
 disp.plot()
 ```
-[confusion-matrix.png](https://postimg.cc/YjXY4FR5)  
-<img src="confusion_matrix.png" alt="Drawing" style="width: 600px;"/>
+[![confusion-matrix.png](https://i.postimg.cc/jdTXFQ7S/confusion-matrix.png)](https://postimg.cc/YjXY4FR5)  
 
 ## <span style="color:Darkgoldenrod"> **CONCLUSIONES**</span>  
 
