@@ -1,4 +1,4 @@
-# **Herramientas y técnicas para analisis de Tweets sobre el proyecto "Plan Integral de Movilidad en el sur de la Ciudad de la ZMG"**
+# **Herramientas y técnicas para análisis de Tweets sobre el proyecto "Plan Integral de Movilidad en el sur de la Ciudad de la ZMG"**
 
 ## <span style="color:Darkgoldenrod">**INTRODUCCIÓN.**</span>
   
