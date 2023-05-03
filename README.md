@@ -1,25 +1,27 @@
 # **Herramientas y técnicas para análisis de Tweets sobre el proyecto "Plan Integral de Movilidad en el sur de la Ciudad de la ZMG"**
 
+ + El código completo realizado en Jupyter Notebook se puede consultar haciendo: [Clic aquí](https://github.com/LUISVALLARTA/Proyecto_final/blob/main/src/Proyecto_Final_An%C3%A1lisis_Tweets.ipynb)
+ + El archivo al análisis de resultados detallados se encuentra en el siguiente enlance: [Resultados](https://github.com/LUISVALLARTA/Proyecto_final/tree/main/results)
+
+
 ## <span style="color:Darkgoldenrod">**INTRODUCCIÓN.**</span>
   
 
-El día jueves 20 de abril del año 2023 en gobernador del Estado de Jalisco presento el **_"Plan integral de movilidad para el sur de la ciudad"_** el cuál consta de una inversión de 28 mil 500 millones de pesos a largo plazo con la idea de poder resolver los problemas de movilidad en la Zona Sur del Área Metropolitana de Guadalajara, en donde se proponen un BRT en Carretera a Chapala, Ampliación de la Línea 1 del Tren Ligero, dos nuevas rutas y acciones en la Línea 4. Pero hay algo importante a preguntarse y esto es **_¿Qué fue lo que la gente opino?_**. 
+El día jueves 20 de abril del año 2023 en gobernador del Estado de Jalisco presento el **_"Plan integral de movilidad para el sur de la ciudad"_** el cuál consta de una inversión de 28 mil 500 millones de pesos a largo plazo con la idea de poder resolver los problemas de movilidad en la Zona Sur del Área Metropolitana de Guadalajara, en donde se proponen un BRT en Carretera a Chapala, Ampliación de la Línea 1 del Tren Ligero, dos nuevas rutas y acciones en la Línea 4. Pero hay algo importante a preguntarse y esto es **_¿Cuál es la percepción de las personas sobre el proyecto?_**. 
 
-Esa pregunta es lo que este proyecto busca responder desarrollando un **_análisis de sentimiento_** sobre los tweets de las personas hablando al respecto. 
-
-Podemos definir el _análisis de sentimiento_ como el proceso de determinar el tono emocional detrás de una serie de palabras. La herramienta de análisis de sentimiento es una técnica automatizada para extraer información significativa de las personas, relacionada con sus actitudes, emociones y opiniones.  
+La intención de responder a esta pregunta es desarrollar un **_análisis de sentimiento_** sobre los tweets de las personas hablando al respecto, definiendo el _análisis de sentimiento_ como el proceso de determinar el tono emocional detrás de una serie de palabras. La herramienta de análisis de sentimiento es una técnica automatizada para extraer información significativa de las personas, relacionada con sus actitudes, emociones y opiniones.  
 
 ![](https://getbuzzmonitor.com/wp-content/uploads/analisis-sentimiento.jpg) 
 
-#### **_En que consiste el proyecto de movilidad._**  
+#### **¿_En que consiste el Plan Integral de Movilidad_?**  
 
 Este proyecto es el resultado de las 159 mil propuestas que hicieron los 46 mil 500 ciudadanos que participaron en la consulta y las mesas de diálogo que realizó el Gobierno del Estado desde el año pasado y en donde se tomó en cuenta la participación de los ciudadanos para tener una solución integral a todo el problema de movilidad en la Zona Sur de la ciudad.
 
-La primera propuesta es la creación de una nueva ruta del transporte público, especialmente diseñada para tener una mejor operación del sistema en la zona sur.
+ * La primera propuesta es la creación de una nueva ruta del transporte público, especialmente diseñada para tener una mejor operación del sistema en la zona sur.
 
-La segunda alternativa la ampliación de la línea 1 del Tren Eléctrico hasta los límites de Santa Anita y San Agustín”.
+ * La segunda alternativa la ampliación de la línea 1 del Tren Eléctrico hasta los límites de Santa Anita y San Agustín”.
 
-También se va a tomar en cuenta la construcción de la Línea 4 y todas las obras complementarias de este proyecto que ya está en proceso y la cuarta propuesta es el BRT de la carretera a Chapala, que es su primera etapa iría desde el Periférico hasta el entronque del Circuito Sur Metropolitano.
+ * También se va a tomar en cuenta la construcción de la Línea 4 y todas las obras complementarias de este proyecto que ya está en proceso y la cuarta propuesta es el BRT de la carretera a Chapala, que es su primera etapa iría desde el Periférico hasta el entronque del Circuito Sur Metropolitano.
 
 Todas estas propuestas están sustentadas en la meta de reducir el uso del transporte particular y fomentar el uso del transporte público.
 
@@ -35,9 +37,9 @@ Así de forma global y a grandes rasgos se tiene la propuesta de solución a los
 
 ![](https://img.freepik.com/vector-gratis/gente-diminuta-positiva-sentada-caminando-cerca-gran-objetivo-flecha-aislada-ilustracion-vectorial-plana-equipo-negocios-dibujos-animados-logrando-meta-o-objetivo-concepto-estrategia-logro-marketing_74855-10139.jpg)   
 
-El objetivo del proyecto es poder realizar un análisis de sentimiento sobre lo que la gente está mencionando en redes sociales, específicamente por Twitter y poder determinar si ellos están a favor o en contra de este proyecto.  
+El objetivo del proyecto es poder realizar un análisis de sentimiento sobre lo que la gente está mencionando en redes sociales, específicamente por Twitter y poder determinar si ellos están a favor o en contra de este proyecto y poder definir con una regresión logística o SVM para determinar un modelo que ayude a clasificar los siguientes tweets como positivos o negativos. 
 
-Para poder llegar a nuestro objetivo general será necesario cumplir con los siguientes objetivos específicos.  
+Para poder llegar al objetivo general será necesario cumplir con los siguientes objetivos específicos.  
 
 1. Conseguir la información de los comentarios hechos en la red social Twitter. 
 2. Preparar y limpiar los datos para su procesamiento.  
@@ -52,17 +54,17 @@ Para poder llegar a nuestro objetivo general será necesario cumplir con los sig
 Los objetivos mencionados anteriormente se fueron realizando con la siguiente metodología. 
 
 1. Scraping de redes sociales.
-    - Limpieza de los datos
-2. Análisis de sentimientos con el uso de la librería spaCy
-3. Visualización de la información con el uso de la librería Scikit Learn.
+    - Limpieza y preprocesamiento de los textos
+2. Análisis de sentimientos con el uso de la librería TextBlob
+3. Emplear la librería Scikit Learn para usar la técnica de aprendizaje automático como tarea de clasificación.
 
 
 ### **Scraping de redes sociales**  
 
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQwi0JY_v_ooebuAL9rrx_argIguI__Cq9mLm7CFHFpA-vvYXRMbg86Dq0QBe2DfUEYIc&usqp=CAU)  
 
-Para la obtención de la información se utilizó un método de scraping en **_R studio_** utilizando la paquetería de  **_rtweet_**. 
-El código que se utilizó se puede ver más a detalles en el archivo **CodigoR_Scraping_Tweets.R**  localizado en la carpeta **src** o haciendo **[click aquí](https://github.com/LUISVALLARTA/Proyecto_final/blob/main/src/CodigoR_Scraping_Tweets.R)**  
+Para la obtención de la información se utilizó un método de scraping en **_R studio_** utilizando la libreria de  **_twitteR_**. 
+El código que se utilizó se puede ver más a detalles en el archivo **CodigoR_Scraping_Tweets.R**  localizado en la carpeta **src** o haciendo **[clic aquí](https://github.com/LUISVALLARTA/Proyecto_final/blob/main/src/CodigoR_Scraping_Tweets.R)**  
 
 La función que se utilizo fue la siguiente.
 
@@ -144,14 +146,11 @@ texto['tokens_sin_stopwords'] = tokens.apply(lambda x: [palabra for palabra in x
 De esta manera conseguimos tener un dataset prácticamente limpio para empezar a usar la librería de Spacy.
 
 
-### **Análisis de sentimientos con el uso de la librería spaCy**
-
 ![](https://spacy.io/_next/static/media/social_default.96b04585.jpg)  
 
-En el mismo archivo anterior [Proyecto_final_equipo_2_analisis_de_textos.ipynb](https://github.com/LUISVALLARTA/Proyecto_final/blob/main/src/Proyecto_final_equipo_2_analisis_de_textos.ipynb), se desarrolló también la parte de Spacy, donde se determinó la función "spacy_analyzer", la función extract_entities para la extracción de entidades y poder determinar un valor al tweet, es decir, si el usuario estaba de acuerdo con el proyecto, se muestra neutro, o si está en desacuerdo. 
+En el mismo archivo anterior [Proyecto_final_equipo_2_analisis_de_textos.ipynb](https://github.com/LUISVALLARTA/Proyecto_final/blob/main/src/Proyecto_final_equipo_2_analisis_de_textos.ipynb), se desarrolló también la parte de Spacy, donde se determinó la función "spacy_analyzer", la función extract_entities para la extracción de entidades.
 
 Se deja una muestra del código utilizado en esta parte del proceso den análisis. 
-
 
 ```python
 def spacy_analyzer(text):
@@ -177,7 +176,11 @@ def analyze_syntax(text):
 
 text_tweets['analisis_sintactico'] = text_tweets['text'].apply(analyze_syntax)
 text_tweets['analisis_sintactico'] 
+```
 
+### **Análisis de sentimientos con el uso de la librería TextBlob**
+
+``` python
 text_tweets['Subjetividad'] = text_tweets['text'].apply(get_subjectivity)
 text_tweets['Polaridad'] = text_tweets['text'].apply(get_polarity)
 text_tweets.head()
@@ -195,7 +198,7 @@ text_tweets.head()
 ```
 
 
-### **Visualización de la información con el uso de la librería  Scikit Learn & Matplotlib.**  
+### **Visualización de la información obtenida del Análisis de Sentimiento.**  
 
 Acontinuación se muestran algunas de las visualizaciónes en las que nos apoyamos para el análisis de los datos. 
 
@@ -204,13 +207,15 @@ Acontinuación se muestran algunas de las visualizaciónes en las que nos apoyam
 ```python
 text_tweets['Sentimiento'].value_counts()
 
-plt.title("Número de Tweets por sentimiento sobre el proyecto de movilidad urbana en el sur de la ciudad")
-plt.xlabel('Sentimento')
-plt.ylabel('Número de tweets')
-text_tweets['Sentimiento'].value_counts().plot(kind='bar')
-plt.show()
+alt.Chart(tipo_sentimiento).mark_bar().encode(
+    alt.X("Sentimiento:N", sort= '-y',title="Sentimiento del Tweet", bin=False),
+    alt.Y('frecuencia:Q', title="Número de Tweets"),
+    alt.Color('Sentimiento', legend=None)
+).properties(width=alt.Step(150),
+    title="Número de tweets pos sentimiento sobre el Proyecto"
+)
 ```
-[![Grafica-de-barras.png](https://i.postimg.cc/7YNV8G3M/Grafica-de-barras.png)](https://postimg.cc/rKKW5pYK)    
+[![Grafica-sentimi-image.png](https://i.postimg.cc/Xvqgt6wq/Grafica-sentimi-image.png)](https://postimg.cc/p9N8n7cM)   
 
 **Grafica de circular.**
 
@@ -253,7 +258,7 @@ plt.show()
 ```
 [![Palabras-negativas.png](https://i.postimg.cc/251FZ0P2/Palabras-negativas.png)](https://postimg.cc/SXpM0fQM)
 
-**Predicción del modelo usando una regresión logística**
+### **Herramientas de la libreria Scikit Learn para predicción del modelo usando una regresión logística**  
 
 ```python
 print(confusion_matrix(y_test, mod_logreg_pred))
