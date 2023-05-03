@@ -43,8 +43,8 @@ Para poder llegar al objetivo general será necesario cumplir con los siguientes
 
 1. Conseguir la información de los comentarios hechos en la red social Twitter. 
 2. Preparar y limpiar los datos para su procesamiento.  
-3. Hacer uso de algoritmos que nos ayuden a realizar el procesamiento de los datos. 
-4. Interpretar la información obtenida y sacar las conclusiones del proyecto.   
+3. Hacer uso de algoritmos que nos ayuden a realizar el procesamiento de los datos y análisis de sentimientos. 
+4. Interpretar la información obtenida y predicción o clasificación del sentimiento de tweets para tener las conclusiones del proyecto.   
 
 
 ## <span style="color:Darkgoldenrod">**METODOLOGÍA.**</span>   
