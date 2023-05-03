@@ -7,26 +7,8 @@
 ### Fuente de Datos
 <div style="text-align: justify"> La extracción de tweets es través de un código en el lenguaje R que permite la conexión a la API de Twitter mediante una claves. 
   
-  Los datos son extraídos en formatos xlsx y el código generado se puede observar en el siguiente enlace: (https://github.com/LUISVALLARTA/Proyecto_final/blob/main/src/CodigoR_Scraping_Tweets.R)
+  Los datos son extraídos en formatos csv y el código generado se puede observar en el siguiente enlace: [Scraping Tweets](https://github.com/LUISVALLARTA/Proyecto_final/blob/main/src/CodigoR_Scraping_Tweets.R)
   
-
-La estructura de este repositorio es la siguiente:
-
-├── LICENSE           <- MIT License.  
-|  
-├── README.md         <- Main Readme file with the description of the project.  
-|  
-├── CONTRIBUTING.md   <- Steps yo contribute to the project.  
-|  
-├── CITATION.md       <- Way to cite the project.  
-|  
-├── data              <- Original data bases.  
-|  
-├── doc               <- Archivos de texto.  
-|  
-├── results           <- Clean and analyzes data bases.  
-|  
-└── src               <- Coding files.  
 
 # Analís de sentimiento sobre el "Plan integral de movilidad para el sur de la ciudad" en redes sociales.  
 
