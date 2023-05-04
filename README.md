@@ -110,7 +110,8 @@ Donde se buscaron las siguientes palabras para tratar de conseguir la informaci�
 ![](https://datascientest.com/es/wp-content/uploads/sites/7/2021/05/illu_data_cleaning_blog_2-07.png)  
 
 Una vez obteniendo los datos y extrayéndolos, el siguiente paso sería la limpieza de ellos. 
-En el documento, [Proyecto_final_equipo_2_analisis_de_textos.ipynb](https://github.com/LUISVALLARTA/Proyecto_final/blob/main/src/Proyecto_final_equipo_2_analisis_de_textos.ipynb) en la misma carpeta scr podemos ver como se llevó a cabo este paso de forma más detallada.  
+ 
+ En el documento, [Proyecto Final](https://github.com/LUISVALLARTA/Proyecto_final/blob/main/src/Proyecto_Final_An%C3%A1lisis_Tweets.ipynb) en la misma carpeta scr podemos ver como se llevó a cabo este paso de forma más detallada.  
 De igual forma se muestra a continuación una parte del código que se utilizó para la limpieza de los datos. 
 
 
@@ -148,7 +149,7 @@ De esta manera conseguimos tener un dataset prácticamente limpio para empezar a
 
 ![](https://spacy.io/_next/static/media/social_default.96b04585.jpg)  
 
-En el mismo archivo anterior [Proyecto_final_equipo_2_analisis_de_textos.ipynb](https://github.com/LUISVALLARTA/Proyecto_final/blob/main/src/Proyecto_final_equipo_2_analisis_de_textos.ipynb), se desarrolló también la parte de Spacy, donde se determinó la función "spacy_analyzer", la función extract_entities para la extracción de entidades.
+En el mismo archivo anterior [Proyecto Final](https://github.com/LUISVALLARTA/Proyecto_final/blob/main/src/Proyecto_Final_An%C3%A1lisis_Tweets.ipynb), se desarrolló también la parte de Spacy, donde se determinó la función "spacy_analyzer", la función extract_entities para la extracción de entidades.
 
 Se deja una muestra del código utilizado en esta parte del proceso den análisis. 
 
