@@ -2,7 +2,7 @@
 
  + El código completo realizado en Jupyter Notebook se puede consultar haciendo: [Clic aquí](https://github.com/LUISVALLARTA/Proyecto_final/blob/main/src/Proyecto_Final_An%C3%A1lisis_Tweets.ipynb)
  + El archivo al análisis de resultados detallados se encuentra en el siguiente enlance: [Resultados](https://github.com/LUISVALLARTA/Proyecto_final/tree/main/results)
- +El documento se compartió en redes sociales: https://www.linkedin.com/posts/luisvallartarobledo_github-luisvallartaproyectofinal-activity-7059709707988398080-8AMQ?utm_source=share&utm_medium=member_desktop
+ + El documento se compartió en redes sociales: https://www.linkedin.com/posts/luisvallartarobledo_github-luisvallartaproyectofinal-activity-7059709707988398080-8AMQ?utm_source=share&utm_medium=member_desktop
 
 
 ## <span style="color:Darkgoldenrod">**INTRODUCCIÓN.**</span>
