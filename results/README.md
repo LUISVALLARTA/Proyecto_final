@@ -1,28 +1,28 @@
 
 
-# RRESULTADOS DEL PROYECTO. 
+# RESULTADOS DEL PROYECTO. 
 
 ## <span style="color:Darkgoldenrod">**OBJETIVO DEL PROYECTO.**</span>  
 
 ![](https://img.freepik.com/vector-gratis/gente-diminuta-positiva-sentada-caminando-cerca-gran-objetivo-flecha-aislada-ilustracion-vectorial-plana-equipo-negocios-dibujos-animados-logrando-meta-o-objetivo-concepto-estrategia-logro-marketing_74855-10139.jpg)   
 
-Para poder observar nuestros resultados obtenidos a lo largo de este proyecto, es importante regresar al plateamiento de los objetivos, tanto el principal como los especificos.  
+Para poder observar los resultados obtenidos a lo largo de este proyecto, es importante regresar al plateamiento de los objetivos tanto el principal como los especificos.  
 
-En el caso de los **_objetivos especificos_** podemos determinar los siguientes puntos. 
+En el caso de los **_objetivos especificos_** se determinan los siguientes puntos. 
 
 |Objetivo especifico| Resultado|
 |---|:----|
-|1. Conseguir la información de los comentarios hechos en la red social Twitter. | Se utilizó un metodo de scraping en lenguaje R, y se consiguieron 1734 Tweets |
-|2. Preparar y limpiar los datos para su procesamiento.  | Se utilizaron las librerías de numpyn pandas, etc. para la limpieza de los datos |
-|3. Hacer uso de algoritmos que nos ayuden a realizar el procesamiento de los datos. | Se usaron las siguientes librerías spaCy, textblob, wordcloud, sklearn para el precesamiento de los datos |
-|4. Interpretar la información obtenida y sacar las conclusiones del proyecto.   | Se usaron graficos con Seaborn, wordcloud, matplotlib, sklearn y así poder visualizar mejor la información |
+|1. Conseguir la información de los comentarios hechos en la red social Twitter. | Se utilizó un método de scraping en lenguaje R, y se consiguieron 1735 Tweets |
+|2. Preparar y limpiar los datos para su procesamiento.  | Se utilizaron las librerías de numpyn pandas, Spacy, re, etc. para la limpieza de los datos |
+|3. Hacer uso de algoritmos que nos ayuden a realizar el procesamiento de los datos y análisis de sentimientos. | Se usaron las siguientes librerías  textblob para optener el análisis de sentimiento, wordcloud, altair y sklearn para el modelado estadístico y realizar regresión logística |
+|4. Interpretar la información obtenida y sacar las conclusiones del proyecto.   | Se usaron graficos con Seaborn, wordcloud, matplotlib, sklearn y para visualizar la percepción de los ciudadanos y clasificar y predecir el sentimiento de los tweets  |
 
 ### Objetivo Principal. 
 Recordemos que el objetivo principal era el siguiente:
 
-> Realizar un análisis de sentimiento sobre lo que la gente está mencionando en redes sociales, específicamente por Twitter y poder determinar si ellos están a favor o en contra de este proyecto.  
+> El objetivo del proyecto es poder realizar un análisis de sentimiento sobre lo que la gente está mencionando en redes sociales, específicamente por Twitter y poder determinar si ellos están a favor o en contra de este proyecto y poder definir con una regresión logística o SVM para determinar un modelo que ayude a clasificar los siguientes tweets como positivos o negativos.  
 
-Por lo mencionado en los puntos especificos, podemos concluir que el hemos podido conseguir llegar a nuestro principal objetivo, el cuál en la parte de metodología y conclusiones podemos sustentar esta afirmación. 
+Por lo mencionado en los puntos especificos, se puede concluir que se ha podido conseguir llegar al  principal objetivo, el cuál en la parte de metodología y conclusiones podemos sustentar esta afirmación. 
 
 ## <span style="color:Darkgoldenrod">**METODOLOGÍA.**</span>   
 
@@ -34,6 +34,14 @@ Los objetivos mencionados anteriormente se fueron realizando con la siguiente me
     - Limpieza de los datos
 2. Análisis de sentimientos con el uso de la librería spaCy
 3. Visualización de la información con el uso de la librería Scikit Learn.
+
+### Visualización con Geopandas
+
+Se puede observar que el municipio de Guadalajara y Zapopan son son los municipios con mayor cantidad de vehículos en circulación registrados durante el período 2010 al 2020, así mismo el crecimiento exponencial en la población en dichos municipios.
+ 
+ Por lo tanto el interés surgio por analizar el proyecto de movilidad a implementar por el Gobierno del Estado por abordar una de las problematicas que limitan que la ciudadania realice bastante recorrido diario para llegar a sus destinos.
+ 
+[![Geopandas.png](https://i.postimg.cc/pTygzNj8/Geopandas.png)](https://postimg.cc/sQd6CNwD)
 
 
 ### **Scraping de redes sociales**  
@@ -122,10 +130,7 @@ texto['tokens_sin_stopwords'] = tokens.apply(lambda x: [palabra for palabra in x
 ```
 De esta manera conseguimos tener un dataset prácticamente limpio para empezar a usar la librería de Spacy.
 
-
-### **Análisis de sentimientos con el uso de la librería spaCy**
-
-En el mismo archivo anterior [Proyecto_final_equipo_2_analisis_de_textos.ipynb](https://github.com/LUISVALLARTA/Proyecto_final/blob/main/src/Proyecto_final_equipo_2_analisis_de_textos.ipynb), se desarrolló también la parte de Spacy, donde se determinó la función "spacy_analyzer", la función extract_entities para la extracción de entidades y poder determinar un valor al tweet, es decir, si el usuario estaba de acuerdo con el proyecto, se muestra neutro, o si está en desacuerdo. 
+En el mismo archivo anterior [Proyecto_final_equipo_2_analisis_de_textos.ipynb](https://github.com/LUISVALLARTA/Proyecto_final/blob/main/src/Proyecto_final_equipo_2_analisis_de_textos.ipynb), se desarrolló también la parte de Spacy, donde se determinó la función "spacy_analyzer", la función extract_entities para la extracción de entidades.
 
 Se deja una muestra del código utilizado en esta parte del proceso den análisis. 
 
@@ -154,7 +159,11 @@ def analyze_syntax(text):
 
 text_tweets['analisis_sintactico'] = text_tweets['text'].apply(analyze_syntax)
 text_tweets['analisis_sintactico'] 
+```
 
+### **Análisis de sentimientos con el uso de la librería TextBlob**
+
+``` python
 text_tweets['Subjetividad'] = text_tweets['text'].apply(get_subjectivity)
 text_tweets['Polaridad'] = text_tweets['text'].apply(get_polarity)
 text_tweets.head()
@@ -172,7 +181,8 @@ text_tweets.head()
 ```
 
 
-### **Visualización de la información con el uso de la librería  Scikit Learn & Matplotlib.**  
+### **Visualización de la información obtenida del Análisis de Sentimiento.**  
+
 
 Acontinuación se muestran algunas de las visualizaciónes en las que nos apoyamos para el análisis de los datos. 
 
@@ -188,6 +198,23 @@ text_tweets['Sentimiento'].value_counts().plot(kind='bar')
 plt.show()
 ```
 [![Grafica-de-barras.png](https://i.postimg.cc/7YNV8G3M/Grafica-de-barras.png)](https://postimg.cc/rKKW5pYK)    
+
+
+**Grafica de barras con sentimiento positivo y negativo.**
+
+```python
+text_tweets['Sentimiento'].value_counts()
+
+alt.Chart(tipo_sentimiento).mark_bar().encode(
+    alt.X("Sentimiento:N", sort= '-y',title="Sentimiento del Tweet", bin=False),
+    alt.Y('frecuencia:Q', title="Número de Tweets"),
+    alt.Color('Sentimiento', legend=None)
+).properties(width=alt.Step(150),
+    title="Número de tweets pos sentimiento sobre el Proyecto"
+)
+```
+[![Grafica-sentimi-image.png](https://i.postimg.cc/Xvqgt6wq/Grafica-sentimi-image.png)](https://postimg.cc/p9N8n7cM)   
+
 
 **Grafica de circular.**
 
@@ -230,7 +257,7 @@ plt.show()
 ```
 [![Palabras-negativas.png](https://i.postimg.cc/251FZ0P2/Palabras-negativas.png)](https://postimg.cc/SXpM0fQM)
 
-**Predicción del modelo usando una regresión logística**
+### **Herramientas de la libreria Scikit Learn para predicción del modelo usando una regresión logística** 
 
 ```python
 print(confusion_matrix(y_test, mod_logreg_pred))
@@ -244,6 +271,23 @@ disp.plot()
 ```
 [![confusion-matrix.png](https://i.postimg.cc/jdTXFQ7S/confusion-matrix.png)](https://postimg.cc/YjXY4FR5)  
 
+Tanto el modelo de regresión logística y el Support Vector Machine que son métodos para algoritmos supervisados obtuvieron una precisión del 97.92% para clasificar el sentimiento de los tweets, dando un gran valor al modelo de predicción para determinar el sentimiento de los próximos tweets.
+```python
+mod_logreg = LogisticRegression()
+mod_logreg.fit(x_train, y_train)
+mod_logreg_pred = mod_logreg.predict(x_test)
+mod_logreg_acc = accuracy_score(mod_logreg_pred, y_test)
+print("Test de Precisión: {:.2f}%".format(mod_logreg_acc*100))
+```
+
+```python
+svc_pred = SVCmodel.predict(x_test)
+svc_acc = accuracy_score(svc_pred, y_test)
+print("test de precicion: {:.2f}%".format(svc_acc*100))
+```
+
+[![Metrics.png](https://i.postimg.cc/C5M50xnD/Metrics.png)](https://postimg.cc/ftFDjZKT)
+
 ## <span style="color:Darkgoldenrod"> **CONCLUSIONES**</span>  
 
 Algunas de las conclusiónes que puedenmencionar son las siguientes: 
@@ -255,10 +299,12 @@ Algunas de las conclusiónes que puedenmencionar son las siguientes:
 + Las palabras con mayor frecuencia en los tweets negativos fueron: López Mateos, gobernador, límites, movilidad, entre otras. Esto ante la situación actual de la avenida que los usuarios llegan a quejarse día a día del tráfico intenso.
 + Se arrojo una precisión general del modelo de regresión logística y Support Vector Machin del 97.92% (teniendo un buen modelo para clasificar los siguientes tweets en positivos o negativos).
 
-Podemos decir que en general, el proyecto tiene una opinión entre neutral sesgada hacia la positiva, lo cuál es un tabulador positivo para continuar con el proyecto.
+En general el proyecto tiene una opinión entre neutral sesgada hacia la positiva, lo cuál es un tabulador positivo para continuar con el proyecto.
 
-### **Posibles mejoras al proyecto**  
-Algunos puntos que podrían ser interesantes para este análisis es poder conseguir datos extras de los usuarios que podrían ser de ayuda para este análisis, cómo edad de los usuarios sexo y en que zona de la ciudad residen.  
+### **Puntos de mejora en el Proyecto**  
++ Algunos puntos que podrían ser interesantes para este análisis es poder conseguir datos extras de los usuarios que podrían ser de ayuda para este análisis, cómo edad de los usuarios sexo y en que zona de la ciudad residen.  
 
-Esto ayudaría a poder entender mejor de donde viene las opiniones positivas o negativas, si provienen de algún nicho en especifico y desarrollar mejor, de que lado de la población viene una negativa hacia este proyecto. 
++ La ubicación de los tweets y detectar el origen de las opiniones positivas o negativas, si provienen de algún nicho en especifico y desarrollar mejor el análisis y observar la población estudio.
+
++ Y añadir libreria o crear algortimos de procesamiento de texto en lenguaje español, debido a que la mayoría de las librerias de procesamiento de lenguaje natural se encuentran en ingles y puede distorsionar algunos resultados en la clasificación de sentimientos.
 
